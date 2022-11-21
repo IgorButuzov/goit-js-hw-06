@@ -28,39 +28,34 @@ const images = [
   },
 ];
 
-  
+// for (const image of images) {
+//   const imgList = document.createElement("li");
 
+//   const imgs = document.createElement("img");
+//   imgs.src =  image.url;
+//   imgs.alt = image.alt;
+//   imgs.classList.add("img");
+//   imgList.append(imgs);
+//   // console.log(imgList)
   
-  
-for (const image of images) {
-  const imgList = document.createElement("li");
-
-  const imgs = document.createElement("img");
-  imgs.src =  image.url;
-  imgs.alt = image.alt;
-  imgs.classList.add("img");
-  imgList.append(imgs);
-  
-  const pictures = document.querySelector(".gallery");
-  pictures.append(imgList); 
-    console.log(pictures)
+//   const pictures = document.querySelector(".gallery");
+//   pictures.append(imgList); 
+//     console.log(pictures)
+// }
+// 
+const makePicture = (image) => {
+  const { url, alt } = image;
+  // console.log(image)
+  return `
+  <li>
+        <img src="${(image.url)}" alt="${(image.alt)}" class="img">
+      </li>
+  `
 }
 
-
-  
-
-
-// const imgList = document.querySelector(".gallery");
-// document.createElement("li");
-// // console.log(imgList);
-  
-// const imgs = document.createElement("img");
-// imgs.src = images.map(image => image.url);
-// imgs.alt = images.map(image => image.alt);
-// // console.log(imgs)
-
-// for (const image of images) {
-//   console.log(image)
-// }
-
+const pictureEl = document.querySelector(".gallery");
+const loadPictures = images.map(makePicture)
+                           .join('');
+console.log(loadPictures);
+pictureEl.insertAdjacentHTML('beforeend', loadPictures);
 
