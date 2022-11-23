@@ -32,7 +32,8 @@ btnDec.addEventListener('click',
         counterValue -= 1
         valueUI.textContent = counterValue;
     }
-    )
+)
+    
     
 
 
