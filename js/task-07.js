@@ -12,8 +12,6 @@
 const changeInput = document.querySelector('#font-size-control');
 const outputResult = document.querySelector('#text');
 
-console.log(changeInput);
-console.dir(outputResult);
 
 changeInput.addEventListener('input', onInputChange);
 
