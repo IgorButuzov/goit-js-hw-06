@@ -31,20 +31,15 @@ const inputPass = document.querySelector('#validation-input');
 
 inputPass.addEventListener('blur', (event) => {
     event.currentTarget.value.length == inputPass.dataset.length ?
-        inputPass.classList.add('valid') : inputPass.classList.add('invalid');
-    
-    console.log(typeof (event.currentTarget.value.length))
-    console.log(typeof(inputPass.dataset.length))
+        inputPass.classList.add('valid') :
+        inputPass.classList.remove('valid')    
 }
 )
-// чомусь після першого фолс працює тільки після перезавантаження сторінки(
+inputPass.addEventListener('blur', (event) => {
+    event.currentTarget.value.length != inputPass.dataset.length ?
+        inputPass.classList.add('invalid') :
+        inputPass.classList.remove('invalid')    
+}
+)
 
-// const inputPass = document.querySelector('#validation-input');
 
-// inputPass.addEventListener('blur', validationTest)
-
-// function validationTest(event) {
-//     if (event.currentTarget.value.length == inputPass.dataset.length) {
-//         return inputPass.classList.add('valid')
-//     } inputPass.classList.add('invalid')
-// }
