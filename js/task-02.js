@@ -20,17 +20,33 @@ const ingredients = [
   'Condiments',
 ];
 
-for (let i = 0; i < ingredients.length; i ++) {
+// for (let i = 0; i < ingredients.length; i ++) {
   
+//   const prodItem = document.createElement("li");
+//   prodItem.textContent = `${ingredients[i]}`;
+//   prodItem.classList.add("item");
+
+//   const prodList = document.querySelector("#ingredients");
+//   prodList.append(prodItem);
+  
+//   console.log(prodList)
+// }
+const prodEl = [];
+
+for (let i = 0; i < ingredients.length; i++) {
   const prodItem = document.createElement("li");
   prodItem.textContent = `${ingredients[i]}`;
   prodItem.classList.add("item");
-
-  const prodList = document.querySelector("#ingredients");
-  prodList.append(prodItem);
-  
-  console.log(prodList)
+  prodEl.push(prodItem)
 }
+
+const prodList = document.querySelector("#ingredients");
+  prodList.append(...prodEl);
+  console.log(prodList)
+
+
+  
+
 
   
 
