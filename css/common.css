@@ -36,3 +36,10 @@ li{
   border-radius: 20px;
   width: 210px;
 }
+
+.box {
+
+  border: solid 1px tomato;
+  text-align: center;
+  margin-bottom: 5px;
+}

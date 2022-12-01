@@ -39,7 +39,7 @@ for (let i = 0; i < ingredients.length; i++) {
   prodItem.classList.add("item");
   prodEl.push(prodItem)
 }
-
+console.log(prodEl)
 const prodList = document.querySelector("#ingredients");
   prodList.append(...prodEl);
   console.log(prodList)
