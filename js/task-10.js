@@ -36,12 +36,14 @@ const btnDestroy = document.querySelector("[data-destroy]");
 inputNum.addEventListener('input', getAmount)
 
 let amount = 0;
-let boxlSize = 30;
+let boxSize = 30;
 btnCreate.addEventListener('click', createBoxes);
 
 btnDestroy.addEventListener('click', () => {
   boxGroup.innerHTML = '';
-  boxlSize = 30;
+  boxSize = 30;
+  inputNum.value = '';
+  amount = 0
 });
 
 function getAmount(event) {
@@ -59,9 +61,9 @@ function createBoxes(event) {
   const box = document.createElement('div');
     box.classList.add('box')
     box.textContent = `box ${(i + 1)}`;
-    boxlSize += 10;
-    box.style.height = `${boxlSize}px`;
-    box.style.width = `${boxlSize}px`;
+    boxSize += 10;
+    box.style.height = `${boxSize}px`;
+    box.style.width = `${boxSize}px`;
     box.style.backgroundColor = `${getRandomHexColor()}`;
     boxes.push(box);
     
