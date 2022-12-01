@@ -36,11 +36,12 @@ const btnDestroy = document.querySelector("[data-destroy]");
 inputNum.addEventListener('input', getAmount)
 
 let amount = 0;
-
+let boxlSize = 30;
 btnCreate.addEventListener('click', createBoxes);
 
 btnDestroy.addEventListener('click', () => {
   boxGroup.innerHTML = '';
+  boxlSize = 30;
 });
 
 function getAmount(event) {
@@ -48,7 +49,7 @@ function getAmount(event) {
 };
 
 function getRandomHexColor() {
-  randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 };
 
 function createBoxes(event) {
@@ -58,12 +59,45 @@ function createBoxes(event) {
   const box = document.createElement('div');
     box.classList.add('box')
     box.textContent = `box ${(i + 1)}`;
-    box.style.height = '50px';
-    box.style.width = '50px';
-    box.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;;
+    boxlSize += 10;
+    box.style.height = `${boxlSize}px`;
+    box.style.width = `${boxlSize}px`;
+    box.style.backgroundColor = `${getRandomHexColor()}`;
     boxes.push(box);
     
   }
     
   boxGroup.append(...boxes);
 };
+// const inputEl = document.querySelector('input');
+// const btnCreate = document.querySelector('[data-create]');
+// const btnDestroy = document.querySelector('[data-destroy]');
+// const boxesEl = document.querySelector('#boxes');
+// let numberInput = 0;
+// inputEl.addEventListener('input', () => {
+//   numberInput = Number(inputEl.value);
+// });
+// btnCreate.addEventListener('click', () => {
+//   createBoxes(numberInput);
+// });
+// btnDestroy.addEventListener('click', destroyBoxes);
+// let boxlSize = 20;
+// function createBoxes(amount) {
+//   const div = [];
+//   for (let index = 1; index <= amount; index += 1) {
+//     const divEl = document.createElement('div');
+//     boxlSize += 10;
+//     divEl.style.width = `${boxlSize}px`;
+//     divEl.style.height = `${boxlSize}px`;
+//     divEl.style.backgroundColor = `${getRandomHexColor()}`;
+//     div.push(divEl);
+//   }
+//   boxesEl.prepend(...div);
+// }
+// function destroyBoxes() {
+//   boxesEl.innerHTML = '';
+//   boxlSize = 20;
+// }
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
